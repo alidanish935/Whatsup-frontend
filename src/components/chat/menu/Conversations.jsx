@@ -33,6 +33,7 @@ const Conversations = ({text}) => {
   useEffect(()=>{
     socket.current.emit('addUser',account)
     socket.current.on("getUsers",users=>{
+      console.log('users in socket--',users)
       setActiveUsers(users)
     })
   },[account])

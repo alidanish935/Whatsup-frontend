@@ -36,6 +36,7 @@ const Text = styled(Typography)`
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
 `;
+
 const Conversation = ({user}) => {
     const { setPerson} = useContext(UserContext)
     const { account} = useContext(AccountContext)

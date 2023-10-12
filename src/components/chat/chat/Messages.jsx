@@ -76,6 +76,10 @@ const Messages = ({ person, conversation }) => {
     useEffect(()=>{
         ScrollRef.current?.scrollIntoView({transition:"smooth"})
     })
+    useEffect(()=>{
+        incomingMessage && conversation?.members?.includes(incomingMessage.senderId)&&
+            setMessages(prev => [...prev,incomingMessage])
+    },[incomingMessage, conversation])
     useEffect(() => {
         // console.log('getMessageDetail---')
         const getMessageDetail = async () => {
