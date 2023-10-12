@@ -58,8 +58,8 @@ const LoginDialog = () => {
         console.log('resp--',resp)
         
     }
-    const onLoginFailure=()=>{
-
+    const onLoginFailure=(res)=>{
+        console.log('error login failure - ',res)
     }
   return (
     <Dialog open={true} BackdropProps={{style:{backgroundColor:'unset'}}} maxWidth={'md'} PaperProps={{sx : dialogStyle }}  >
