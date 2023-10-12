@@ -1,10 +1,11 @@
 import axios from 'axios'
 
-const url = 'http://localhost:8000'
+// const url = 'http://localhost:8000'
+const Url = 'https://whatsup-server.onrender.com'
 
 export const addUser = async (data)=>{
     try{
-        const res = await axios.post(`${url}/add`,data)
+        const res = await axios.post(`${Url}/add`,data)
         console.log('res in addUser api.js',res.data)
         return res.data
     }catch(error){
@@ -15,7 +16,7 @@ export const addUser = async (data)=>{
 
 export const getUser = async()=>{
     try{
-        const res = await axios.get(`${url}/users`)
+        const res = await axios.get(`${Url}/users`)
         return res.data
     }catch(error){
         console.log('error while getting user',error.message)
@@ -24,7 +25,7 @@ export const getUser = async()=>{
 }
 export const setConversation= async(data)=>{
     try{
-        const res = await axios.post(`${url}/conversation/add`,data)
+        await axios.post(`${Url}/conversation/add`,data)
 
     }catch(error){
         console.log('error while calling setConversation api',error.message)
@@ -34,7 +35,7 @@ export const setConversation= async(data)=>{
 
 export const getConversation =async(data)=>{
     try{
-        const res = await axios.post(`${url}/getconversation`,data)
+        const res = await axios.post(`${Url}/getconversation`,data)
         return res.data
     }catch(error){
         console.log('error while getting ',error.message)
@@ -44,7 +45,7 @@ export const getConversation =async(data)=>{
 
 export const newMessage = async(data)=>{
     try{
-        const res = await axios.post(`${url}/message/add`,data)
+        const res = await axios.post(`${Url}/message/add`,data)
         return res.data
     }catch(error){
         console.log('error while sending newmsg ',error.message)
@@ -54,7 +55,7 @@ export const newMessage = async(data)=>{
 
 export const getMessage = async(id)=>{
     try{
-        const res = await axios.get(`${url}/message/get/${id}`)
+        const res = await axios.get(`${Url}/message/get/${id}`)
         return res.data
     }catch(error){
         console.log('error while getting newmsg ',error.message)
@@ -64,7 +65,7 @@ export const getMessage = async(id)=>{
 
 export const UploadFile = async(data)=>{
     try{
-        const res = await axios.post(`${url}/file/upload`,data)
+        const res = await axios.post(`${Url}/file/upload`,data)
         return res
     }catch(error){
         console.log('error while adding file ',error.message)

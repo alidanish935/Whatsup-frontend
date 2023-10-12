@@ -63,12 +63,12 @@ const Messages = ({ person, conversation }) => {
             }
 
             socket.current.emit('sendMessage',message)
+            await newMessage(message)
             setValue('')
             setFile('')
             setImageUrl('')
             setNewMessageFlag(prev => !prev)
             // console.log('message- ',message)
-            const dbmsg = await newMessage(message)
             // console.log('dbmsg- ',dbmsg)
         }
     }
